@@ -1,0 +1,16 @@
+# ignore .vscode directory
+*.vscode
+
+#ignore all json file
+*.json
+
+#ignore img,music file
+*.jpg
+*.mp3
+*.mp4
+*.png
+
+#ignore fonts
+*.eot
+*.ttf
+*.woff
