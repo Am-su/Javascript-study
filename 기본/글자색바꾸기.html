@@ -10,5 +10,11 @@
 <body>
   <h1 id="heading">안녕 자바 스크립트</h1>
   <p id="text">위의 텍스트를 클릭 해보세요.</p>
+  <script>
+    var heading = document.querySelector("#heading");
+    heading.onclick = function(){
+      heading.style.color="red";
+}
+  </script>
 </body>
 </html>
