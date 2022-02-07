@@ -18,6 +18,7 @@
   position: absolute;
   left: 50px;
   top: 110px;
+  border-radius:100%;
 }
 
 #btn{
