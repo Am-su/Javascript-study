@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="libs/jquery-3.6.0.min.js"></script>
+  <script>
+    
+    // $(document).ready(function(){
+      
+    // })
+
+    //위와 같은것
+    // $(function( ){
+      
+    // })
+
+    $(function( ){
+      $(".btn1").click(function(){
+        $("#p1").css({
+          "color" : "red",
+          "font-size" : "bold"
+        })
+      })
+
+      $(".btn2").on({
+        "mouseover focus" : function(){
+          $("#p2").css({
+            "color" : "#0f0",
+            "font-size" : "900"
+          })
+        },
+        "mouseout blur" : function(){
+          $("#p2").css({
+            "color" : "#000",
+            "font-size" : "normal"
+          })
+        }
+      })
+      
+      
+      // off()는 등록된 이벤트를 제거
+      // $(".btn1").off("click");
+    })
+  </script>
+</head>
+<body>
+  <p id="p1">반갑습니다</p>
+  <button class="btn1">버튼1</button>
+  <p id="p2">반갑습니다</p>
+  <button class="btn2">버튼2</button>
+</body>
+</html>
