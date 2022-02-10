@@ -6,6 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>콜백함수</title>
   <style>
+    *{
+      padding:0;
+      margin:0;
+    }
     #btnBox{
       width:100%;
       text-align: center;
@@ -14,18 +18,24 @@
     #box{
       border:1px solid black;
     }
-    #box > p{
-      text-align: center;
-    }
   </style>
   <script src="libs/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      var count = 0;
+      $("#btnBox > #btnStart").click(function(){
+        count++;
+        document.getElementById("box").innerHTML=count+"번 클릭되었습니다."
+      })
+    })
+  </script>
 </head>
 <body>
   <div id="btnBox">
     <button id="btnStart">버튼</button>
   </div>
   <div id="box">
-    <p>0번 클릭되었습니다.</p>
+    <p id=txt>0번 클릭되었습니다.</p>
   </div>
 </body>
 </html>
