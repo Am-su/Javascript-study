@@ -5,7 +5,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>클릭시 문자추가</title>
-  
+  <script src="libs/jquery-3.6.0.min.js"></script>
+  <script>
+    var count=0;
+    var $container = null;
+
+    $(document).ready(function(){
+      $container = $("#container");
+
+      $container.append("<p>"+count+"안녕하세요. 반갑습니다.");
+      count++;
+      $("#btnPrint").click(function(){
+        $container.append("<p>"+count+"안녕하세요. 반갑습니다.");
+      count++;
+      })
+    })
+  </script>
 </head>
 <body>
   <button id="btnPrint">출력하기</button>
