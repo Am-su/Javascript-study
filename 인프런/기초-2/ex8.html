@@ -20,12 +20,16 @@
     $(document).ready(function(){
       var $box = $("#box");
       var cnt=0;
+      var timer = null;
 
-      setInterval(function(){
+      timer = setInterval(() => {
         cnt++;
         $box.text(cnt);
-      },1000)
+      }, 1000);
 
+      $("#stop").click(function(){
+        clearInterval(timer);
+      })
     })
   </script>
 </head>
@@ -33,5 +37,6 @@
   <div id="box">
     0
   </div>
+  <button id="stop">정지</button>
 </body>
 </html>
