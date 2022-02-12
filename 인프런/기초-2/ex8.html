@@ -12,17 +12,26 @@
       height:200px;
       text-align: center;
       line-height:200px;
-    }
-    #txt{
-      font-weight: bold;
-      font-size: 150px;
+      font-size:100px;
     }
   </style>
   <script src="libs/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      var $box = $("#box");
+      var cnt=0;
+
+      setInterval(function(){
+        cnt++;
+        $box.text(cnt);
+      },1000)
+
+    })
+  </script>
 </head>
 <body>
   <div id="box">
-    <span id="txt"></span>
+    0
   </div>
 </body>
 </html>
