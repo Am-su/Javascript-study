@@ -29,6 +29,25 @@
       text-align:center;
     }
   </style>
+  <script src="libs/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      var cnt = 0;
+      var $score = $("#score");
+      var flag = true;
+
+      $("#earth").click(function(){
+        if(flag==true){
+          cnt++;
+          $score.html(cnt);
+        }
+      })
+      setTimeout(function(){
+        flag=false;
+        alert("게임이 종료되었습니다.");
+      },5000)
+    })
+  </script>
 </head>
 <body>
   <div id="text">
