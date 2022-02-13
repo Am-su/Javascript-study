@@ -5,10 +5,43 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>움직이는 물고기</title>
+  <style>
+    #panel{
+      width:600px;
+      height:300px;
+      border:2px solid gray;
+      position: relative;
+    }
+    #panel > img{
+      position:absolute;
+      width:100px;
+      height:50px;
+      margin-left:50px;
+      margin-top:140px;
+    }
+    #bar{
+      position:absolute;
+      left:50px;
+      top:190px;
+      width:500px;
+      background: orange;
+      height:20px;
+    }
+    #btnBar{
+      width:600px;
+      text-align: center;
+      margin-top:20px;
+    }
+    #btnStart, #btnStop{
+      font-size:20px;
+      font-weight: bold;
+    }
+
+  </style>
 </head>
 <body>
   <div id="panel">
-    <img src="images/fish1.png">
+    <img src="images/fish2.png">
     <div id="bar"></div>
   </div>
   <div id="btnBar">
