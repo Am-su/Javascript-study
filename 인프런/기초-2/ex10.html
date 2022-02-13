@@ -36,12 +36,57 @@
       font-size:20px;
       font-weight: bold;
     }
-
   </style>
+  <script src="libs/jquery-3.6.0.min.js"></script>
+  <script>
+    var $fish = null;
+    var step = 50;
+    var timer = 0;
+
+    $(document).ready(function(){
+      init();
+      initEvent();
+    })
+    function init(){
+      $fish = $("#fish")
+    }
+    function initEvent(){
+      $("#btnStart").click(function(){
+        start();
+      })
+      $("#btnStop").click(function(){
+        stop();
+      })
+    }
+    function start(){
+      if(timer == 0){
+        timer = setInterval(function(){
+          moveFish();
+        },100)
+      }
+    }
+    function stop(){
+      clearInterval(timer);
+      timer = 0;
+    }
+    function moveFish(){
+      var x = $fish.position().left + step;
+
+      if(x >=400){
+        $fish.attr("src","images/fish1.png");
+        step = -50;
+      }
+      if(x < 50){
+        $fish.attr("src","images/fish2.png");
+        step = 50;
+      }
+      $fish.css("left",x);
+    }
+  </script>
 </head>
 <body>
   <div id="panel">
-    <img src="images/fish2.png">
+    <img src="images/fish2.png" id="fish">
     <div id="bar"></div>
   </div>
   <div id="btnBar">
