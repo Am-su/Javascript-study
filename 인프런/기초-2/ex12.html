@@ -30,12 +30,71 @@
     }
     .panel > #fish{
       position:absolute;
-      width:100px;
-      height:60px;
-      left:250px;
-      top:160px;
+      width:120px;
+      height:70px;
+      left: 240px;
+      top: 165px;
     }
   </style>
+  <script src="libs/jquery-3.6.0.min.js"></script>
+  <script>
+    var cnt = 0;
+    var $score = null;
+    var $fish = null;
+    var flag = false;
+    var timer = 0;
+
+    $(document).ready(function(){
+      init();
+      initEvent();
+    })
+
+    function init(){
+      $score = $("#score");
+      $fish = $("#fish");
+    }
+    function initEvent(){
+      $("#start").click(function(){
+        startGame();
+      })
+      $("#fish").click(function(){
+        addScore();
+      })
+    }
+    function startGame(){
+      if(flag == false){
+        cnt=0;
+        checkEndGame();
+        flag = true;
+        timer = setInterval(() => {
+          moveFish();
+        }, 1000);
+      }
+    }
+    function moveFish(){
+      var x = parseInt(Math.random()*480);
+      var y = parseInt(Math.random()*330);
+
+      $fish.css({
+        left:x,
+        top:y
+      })
+    }
+    function checkEndGame(){
+      setTimeout(() => {
+        flag = false;
+        clearInterval(timer);
+        alert("게임 종료 최종점수 = "+cnt);
+      }, 5000);
+    }
+    function addScore(){
+      if(flag==true){
+        cnt++;
+        $score.html(cnt);
+      }
+    }
+
+  </script>
 </head>
 <body>
   <div>
