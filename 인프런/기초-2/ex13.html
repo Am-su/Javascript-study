@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>배열</title>
+  <script>
+    var menus = ["menu1","menu2","menu3","menu4"];
+    document.write("실행 전 : "+menus.join(", ")+"<br>");
+
+    menus.push("menu5");
+    document.write("push()실행 후 : "+menus.join(", ")+"<br>");
+
+    menus.unshift("menu0");
+    document.write("unshift() 후 : "+menus.join(", ")+"<br>");
+
+    menus.splice(2,0,"추가");
+    document.write("slice() 후 : "+menus.join(", ")+"<br>");
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
