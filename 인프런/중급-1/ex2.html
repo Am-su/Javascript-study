@@ -5,6 +5,57 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>커피잔의 종류</title>
+  <style>
+    #container{
+      width:600px;
+      margin:0 auto;
+    }
+    #prod-pic, #desc{
+      float:left;
+    }
+    #prod-pic{
+      margin:20px 20px auto 10px;
+    }
+    #cup{
+      box-shadow: 1px 1px 2px #eee;
+      outline: 1px dashed #eee;
+      outline-offset: -7px;
+    }
+    #small-pic{
+      margin-top:20px;
+      list-style: none;
+      padding:0;
+    }
+    .small{
+      width:60px;
+      height:60px;
+    }
+    #small-pic > img:hover{
+      cursor:pointer;
+    }
+    #desc{
+      width:300px;
+      padding-top:20px;
+      margin-bottom:50px;
+    }
+    .prod-2{
+      color:blue;
+      font-weight: bold;
+    }
+    #desc  button{
+      margin-top:20px;
+      margin-bottom : 20px;
+      width:100%;
+      padding:10px;
+    }
+    #desc ul{
+      list-style: none;
+    }
+    #desc li{
+      font-size:0.9em;
+      line-height: 1.8;
+    }
+  </style>
 </head>
 <body>
   <div id="container">
@@ -20,7 +71,7 @@
     <div id="desc">
       <ul>
         <li>상품명 : 커피잔</li>
-        <li class="pro-2">판매가 : 9000원</li>
+        <li class="prod-2">판매가 : 9000원</li>
         <li>배송비 : 3000원</li>
         <li>적립금 : 150원</li>
         <li>제조일자 : 202.10.20</li>
