@@ -41,3 +41,16 @@ hr{
   text-indent: 50px;
   line-height: 1.5;
 }
+
+.del{
+  font-size: 20px;
+  text-align: center;
+  color:blue;
+  background: transparent;
+  float:right;
+  margin-right:50px;
+}
+.del:hover{
+  color:red;
+  cursor: pointer;
+}
