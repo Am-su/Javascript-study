@@ -5,10 +5,8 @@
 *.json
 
 #ignore img,music file
-*.jpg
 *.mp3
 *.mp4
-*.png
 
 #ignore fonts
 *.eot
