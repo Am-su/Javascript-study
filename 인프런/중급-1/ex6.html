@@ -16,14 +16,18 @@
     #panel > #fish{
       width:100px;
       height:50px;
-      margin-top:150px;
-      margin-left:100px;
+      top:150px;
+      left:50px;
+      position:absolute;
     }
     #panel > #bar{
       height:20px;
       width:400px;
-      margin-left:100px;
+      left:50px;
+      top:200px;
       background: orange;
+      position: absolute;
+
     }
     #nav{
       width:600px;
@@ -31,6 +35,39 @@
       margin-top:10px;
     }
   </style>
+  <script src="libs/jquery-3.6.0.min.js"></script>
+  <script>
+    //ver. javascript
+    // window.onload = function(){
+    //   var fish = document.getElementById("fish");
+    //   var btnStart = document.getElementById("btnStart");
+
+    //   var left=50;
+    //   var timer = 0;
+
+    //   btnStart.addEventListener("click",function(){
+    //     timer = setInterval(() => {
+    //       left++;
+    //       fish.style.left = left+"px";
+          
+    //       if(left>=370){
+    //         clearInterval(timer);
+    //         timer=0;
+    //       }
+    //     }, 10)
+    //   })
+    // }
+
+    //ver. jquery
+    $(document).ready(function(){
+      var $fish = $("#fish");
+      $("#btnStart").on("click",function(){
+        $fish.animate({
+          left:370
+        },2000)
+      })
+    })
+  </script>
 </head>
 <body>
   <div id="panel">
