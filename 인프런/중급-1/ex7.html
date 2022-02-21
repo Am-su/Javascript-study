@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>노드 변경</title>
+  <style>
+    body{
+      font-size: 15px;
+      font-family: "맑은 고딕";
+    }
+    ul,li{
+      border:3px solid gray;
+      margin:10px;
+    }
+    ul.menu{
+      padding:10px;
+      list-style: none;
+      border:1px solid #000;
+    }
+    ul.menu li{
+      border:2px solid gray;
+      margin:10px;
+    }
+    button{
+      text-align: center;
+    }
+    button:hover{
+      background-color: yellow;
+    }
+    ul.menu li.select{
+      background-color: #ccc;
+    }
+  </style>
+  <script src="libs/jquery-3.6.0.min.js"></script>
+  <script src="js/ex7.js"></script>
+</head>
+<body>
+  <input type="text" id="menuName">
+  <button id="add">추가</button>
+  <button id="update">수정</button>
+  <button id="remove">제거</button>
+  <button id="up">UP</button>
+  <button id="down">DOWN</button>
+  <button id="removeAll">모두제거</button>
+  <ul class="menu">
+  </ul>
+</body>
+</html>
