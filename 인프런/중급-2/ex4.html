@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #parent{
+      width:300px;
+      height:100px;
+      position:absolute;
+      left:200px;
+      top:100px;
+      background-color: red;
+      border:1px solid red;
+      overflow: hidden;
+    }
+    #child{
+      position:absolute;
+      width:100px;
+      height:200px;
+      background-color: white;
+      left:100px;
+      top:0px;
+    }
+    #child div{
+      height:100px;
+      text-align: center;
+      line-height: 100px;
+    }
+    #child div.over{
+      background-color: yellow;
+    }
+  </style>
+  <script src="libs/jquery-3.6.0.min.js"></script>
+  <script>
+    var count = 0;
+    var $info = null;
+    var $child = null;
+
+    $(document).ready(function(){
+      $info = $("#info");
+      $child = $("#child");
+
+      $("#parent").mouseenter(function(e){
+        count++;
+        $info.html($info.html()+"<br>"+count+". "+e.target.id+".over");
+        $child.animate({
+          top:-100
+        },300)
+      })
+      $("#parent").mouseleave(function(e){
+        count++;
+        $info.html($info.html()+"<br>"+count+". "+e.target.id+".out");
+        $child.animate({
+          top:0
+        },300)
+      })
+
+    })
+  </script>
+</head>
+<body>
+  <div id="info">이벤트 정보 출력</div>
+  <div id="parent">
+    parent
+    <div id="child">
+      <div>out</div>
+      <div class="over">
+        over
+      </div>
+    </div>
+  </div>
+</body>
+</html>
