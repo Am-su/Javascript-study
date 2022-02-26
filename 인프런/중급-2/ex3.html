@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .test{
+      width:100px;
+      height:30px;
+      margin:0 auto;
+      background-color: black;
+      text-align: center;
+      color: white;
+    }
+    #addTest{
+      width:100px;
+      margin:0 auto;
+      margin-top:20px;
+      font-size: 20px;
+      text-align: center;
+      display:block;
+    }
+  </style>
+  <script src="libs/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      var cnt = 0;
+      $("#testSpan").on("click",function(){
+        cnt++;
+        $("#testSpan").text(cnt);
+      })
+      $("#addTest").on("click",function(){
+        $("#testSpan").trigger("click");
+      });
+    })
+  </script>
+</head>
+<body>
+  <div class="test">
+    숫자 : <span id="testSpan"><b>0</b></span>
+  </div>
+  <button id="addTest">증가</button>
+</body>
+</html>
