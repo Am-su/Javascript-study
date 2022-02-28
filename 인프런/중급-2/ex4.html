@@ -6,71 +6,67 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    #parent{
-      width:300px;
-      height:100px;
-      position:absolute;
-      left:200px;
-      top:100px;
-      background-color: red;
-      border:1px solid red;
-      overflow: hidden;
+    *{
+      margin:0;
+      padding:0;
     }
-    #child{
-      position:absolute;
-      width:100px;
-      height:200px;
-      background-color: white;
+    body{
+      font-size: 15px;
+    }
+    #info{
+      border:1px solid black;
+      width:500px;
+      height:150px;
+      margin:50px 0 0 100px;
+    }
+    #parent1{
+      position: absolute;
+      border:1px solid black;
+      width:500px;
+      height: 400px;
       left:100px;
-      top:0px;
+      top:200px;
     }
-    #child div{
-      height:100px;
-      text-align: center;
-      line-height: 100px;
-    }
-    #child div.over{
-      background-color: yellow;
+    #fish{
+      position: absolute;
+      padding:30px;
+      margin:50px;
+      left:50px;
+      top:100px;
+      width:120px;
+      border:20px solid red;
     }
   </style>
   <script src="libs/jquery-3.6.0.min.js"></script>
   <script>
-    var count = 0;
-    var $info = null;
-    var $child = null;
+    window.onload = function(){
+      var $info = $("#info");
+      var $fish = $("#fish");
 
-    $(document).ready(function(){
-      $info = $("#info");
-      $child = $("#child");
+      var str = "기본크기 width = "+$fish.width()+", height = "+$fish.height()+"<br>"
+      str += "기본크기 + padding = "+$fish.innerWidth()+", height = "+$fish.innerHeight()+"<br>"
+      str += "기본크기 + border = "+$fish.outerWidth()+", height = "+$fish.outerHeight()+"<br>"
+      str += "기본크기 + border + margin= "+$fish.outerWidth(true)+", height = "+$fish.outerHeight(true)+"<br>"
 
-      $("#parent").mouseenter(function(e){
-        count++;
-        $info.html($info.html()+"<br>"+count+". "+e.target.id+".over");
-        $child.animate({
-          top:-100
-        },300)
-      })
-      $("#parent").mouseleave(function(e){
-        count++;
-        $info.html($info.html()+"<br>"+count+". "+e.target.id+".out");
-        $child.animate({
-          top:0
-        },300)
-      })
 
-    })
+      var localPos = $fish.position();
+      str+="지역좌표 left = "+localPos.left+", top = "+localPos.top+"<br>";
+
+      var globalPos = $fish.offset();
+      str+="전역좌표 left = "+globalPos.left+", top = "+globalPos.top+"<br>";
+
+      $info.html($info.html()).append(str);
+    }
+  
   </script>
 </head>
 <body>
-  <div id="info">이벤트 정보 출력</div>
-  <div id="parent">
-    parent
-    <div id="child">
-      <div>out</div>
-      <div class="over">
-        over
-      </div>
-    </div>
+  <div id="info">
+    (padding = 30px, border = 20px, margin:50px)
+    <br>
+  </div>
+  <div id="parent1">
+    <img src="images/fish2.png" id="fish">
   </div>
 </body>
 </html>
