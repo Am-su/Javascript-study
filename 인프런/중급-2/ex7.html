@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>배너</title>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+    }
+    .wrap{
+      margin:50px;
+    }
+    #prev, #next{
+      width:80px;
+      height: 40px;
+    }
+    .banner{
+      margin-top: 10px;
+      width: 260px;
+      height: 166px;
+      border:1px solid red;
+      position: relative;
+      /* overflow: hidden; */
+    }
+    .banner-container{
+      width:1300px;
+      position: absolute;
+      left:0;
+      top:0;
+    }
+    .banner-container img{
+      display: block;
+      float:left;
+      left:0;
+      top:0;
+      width:260px;
+    }
+  </style>
+  <script src="libs/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      var $banner = $(".banner-container");
+      var bannerLength = $banner.find("img").length;
+      var bannerWidth = $(".banner").width();
+      var currentIndex = 0;
+
+      $("#prev").click(function(){
+        currentIndex--;
+        if(currentIndex<0){
+          currentIndex = bannerLength-1;
+        }
+        showImage(currentIndex);
+      })
+      $("#next").click(function(){
+        currentIndex++;
+        if(currentIndex>4){
+          currentIndex = 0;
+        }
+        showImage(currentIndex);
+      })
+
+      function showImage(index){
+        var left = -(index * bannerWidth);
+        $banner.css("left",left);
+      }
+      
+    })
+  </script>
+</head>
+<body>
+  <div class="wrap">
+    <button id="prev">이전</button>
+    <button id="next">다음</button>
+    <div class="banner">
+      <div class="banner-container">
+        <img src="images/1.png">
+        <img src="images/2.png">
+        <img src="images/3.png">
+        <img src="images/4.png">
+        <img src="images/5.png">
+      </div>
+    </div>
+  </div>
+</body>
+</html>
