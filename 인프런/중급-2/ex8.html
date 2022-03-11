@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>show(), hide()</title>
+    <style>
+        *{
+            font-size: 25px;
+        }
+        #target{
+            border:1px solid black;
+            width:600px;
+            height: 500px;
+            text-align: center;
+        }
+        #kor{
+            width:600px;
+            height: 500px;
+        }
+    </style>
+    <script src="libs/jquery-3.6.0.min.js"></script>
+    <script src="libs/jquery.easing.1.3.js"></script>
+    <script>
+        $(document).ready(function(){
+            var $img1 = $("#target");
+            $("#show").click(function(){
+                $img1.show(3000,"easeInCubic");
+            })
+            $("#hide").click(function(){
+                $img1.hide(3000,"easeOutCubic");
+            })
+        })
+    </script>
+</head>
+<body>
+    <div id="target">
+        <img src="images/korea.png" id="kor">
+    </div>
+    <div>
+        <button id="show">show</button>
+        <button id="hide">hide</button>
+    </div>
+</body>
+</html>
