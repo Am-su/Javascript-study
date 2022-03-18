@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>async, await</title>
+  <script src="libs/jquery-3.6.0.min.js"></script>
+  <script>
+    // 1. async
+    async function fetchUser(){
+      return 'ellie';
+    }
+    const user = fetchUser();
+    user.then(console.log);
+    console.log(user);
+
+    // 2. awiat
+    function delay(ms){
+      return new Promise(resolve=>setTimeout(resolve,ms));
+    }
+
+    async function getApple(){
+      await delay(2000);
+      return 'apple';
+    }
+    async function getBanana(){
+      await delay(1000);
+      return 'banana';
+    }
+
+    async function pickFruits(){
+      // 병렬처리
+      const applePromise = getApple();
+      const bananaPromise = getBanana();
+      const apple = await applePromise;
+      const banana = await bananaPromise;
+      return `${apple} + ${banana}`;
+    }
+    pickFruits().then(console.log);
+
+    // 3. Promise API이용
+
+    //배열에 전달된 모든 promise를 전달
+    function pickAllFruits(){
+      return Promise.all([getApple(),getBanana()]).then(fruits=>
+      fruits.join(''));
+    }
+    pickAllFruits().then(console.log);
+
+    // 배열에 전달된 promise중 가장먼저 값을 리턴하는 것만 전달함
+    function pickOnlyOne(){
+      return Promise.race([getApple(),getBanana()]);
+    }
+    pickOnlyOne().then(console.log);
+  </script>
+</head>
+<body>
+</body>
+</html>
